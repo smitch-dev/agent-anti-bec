@@ -1,0 +1,20 @@
+# Ignorer les dossiers d'environnement Conda
+/venv
+/.conda
+
+# Ignorer le cache Python et les fichiers temporaires
+__pycache__/
+*.pyc
+
+# Ignorer les résultats d'entraînement du Deep Learning (3 Go)
+/results/
+
+# Ignorer les gros fichiers de données
+*.csv
+
+# Ignorer les fichiers de sauvegarde des Notebooks
+.ipynb_checkpoints
+
+# Garder uniquement les modèles finaux nécessaires à l'exécution
+!metadata_model.joblib
+!metadata_preprocessor.joblib
