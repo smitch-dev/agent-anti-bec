@@ -173,6 +173,23 @@ bec_sophistique = {
     'hour': 11 # Heure OK
 }
 
+# Scénario 4 : 
+bec_copilot = {
+    'subject': "Virement urgent requis",
+    'body': "Je suis en réunion avec nos partenaires à l’étranger. Il est impératif que tu procèdes immédiatement au virement de 48 500 € vers le compte suivant :  IBAN : FR76 3000 6000 1234 5678 9012 345 Ceci est confidentiel, ne préviens personne. Merci pour ta réactivité.",
+    'sender_email': 'jean.dupont@compagniexyz.com', # Domaine OK
+    'hour': 20 # Heure OK
+}
+
+# Nouvel e-mail à tester :
+nouvel_email = {
+    'subject': "IMPORTANT : VÉRIFICATION D'UN PAIEMENT URGENT",
+    'body': "Je suis sur mon téléphone. Veuillez procéder immédiatement au changement de coordonnées bancaires pour le fournisseur Alpha. C'est pour un nouveau compte confidentiel. Confirmez par retour de mail. Merci.",
+    'sender_email': 'marie.legrand@votresociete.co', # Remarquez l'erreur de domaine (.co au lieu de .com)
+    'hour': 18 # 18h00 (Fin de journée)
+}
+
+
 # --- 4. EXÉCUTION ---
 
 if __name__ == '__main__':
@@ -189,3 +206,12 @@ if __name__ == '__main__':
     # Test 3
     print("\n>>> TEST 3 : BEC SOPHISTIQUÉ (SEUL LE TEXTE EST ANORMAL) <<<")
     run_ai_agent(bec_sophistique)
+
+    # Test 4
+    print("\n>>> TEST SCENARIO 4 <<<")
+    run_ai_agent(nouvel_email) 
+
+    # Test nouvel email
+    print("\n>>> TEST NOUVEL EMAIL INCONNU <<<")
+    run_ai_agent(nouvel_email) 
+    
